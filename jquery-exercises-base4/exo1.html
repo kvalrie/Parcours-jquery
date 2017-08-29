@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<div class="choix" >
+	<button id="pierre" >Pierre</button>
+	<button id="papier" >Papier</button>
+	<button id="ciseaux" >Ciseaux</button>
+</div>
+
+
+<button id="shifumi" >SHIFUMI!</button>	
+
+	<div id="output"></div>
+	<p></p>
+
+
+
+
+<script type="text/javascript" src='jquery.js' ></script>
+<script>
+$('#choix').css('display','flex');
+
+var ordi = 0;
+var user = 0;
+var msg = "";
+
+$('#pierre').click(function(){
+	 user = 1;
+});
+
+$('#papier').click(function(){
+	 user = 2;
+});
+$('#ciseaux').click(function(){
+	
+	 user = 3;
+		
+});
+var nb_essais = 0;
+var victoire = 0;
+$('#shifumi').click(function(){
+	ordi = Math.floor((Math.random() * 3) + 1);
+	nb_essais = nb_essais + 1;
+
+	if(user == 1){
+		if( ordi == user){
+			msg = ('idem')
+
+		}else if(ordi == 2){
+			msg = ('Défaite')
+		}
+		else if( ordi == 3){
+			msg = ('victoire')
+			victoire = victoire + 1;
+		}
+
+	}else if(user == 2){
+
+		if( ordi == user){
+			msg = ('idem')
+
+		}else if(ordi == 1){
+			msg = ('Défaite')
+		}
+		else if( ordi == 3){
+			msg = ('victoire')
+			victoire = victoire + 1;
+		}
+
+	}else if(user == 3){
+
+		if( ordi == user){
+			msg = ('idem')
+
+		}else if(ordi == 1){
+			msg = ('Défaite')
+		}
+		else if( ordi == 2){
+			msg = ('victoire')
+			victoire = victoire + 1;
+		}
+	}
+
+var reussite = (victoire/nb_essais)*100;
+	$('p').replaceWith('<p> tu as ' + reussite + '% de reussite.lol </p>' )
+	console.log(user);
+	console.log(ordi);
+	$('#output').text(msg);
+
+
+});
+
+
+
+
+</script>
+</body>
+</html>

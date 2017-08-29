@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="">
+	<input type="number" placeholder="Salaire" name= salaire>
+	<input type="radio" name="genre" value="M">M
+	<input type="radio" name="genre" value="F">F
+	<input type="text" placeholder="nombre d'enfant" name="nb_enfants">
+</form>
+
+<button>Calculer salaire net</button>
+
+<p></p>
+<script type="text/javascript" src='jquery.js' ></script>
+<script>
+$('button').click(function(){
+		
+		var sexe = $('input[type=radio][name=genre]:checked').val();
+		var salaire = $('input[type=number][name = salaire]').val();
+		var nb_enfants = $('input[type=text][name = nb_enfants]').val();
+		
+		var charges = (salaire/100)*30;
+		var salaire_net = salaire - charges;
+
+if (sexe == 'F'){
+	salaire_net = salaire_net + ((charges/100)*2);
+}
+if ( nb_enfants == 3){
+	salaire_net = salaire_net + ((charges/100)*1);
+}
+if (nb_enfants == 4){
+	salaire_net = salaire_net + ((charges/100)*2);
+
+}
+
+$('p').replaceWith('<p>voila ton salaire net : '+ salaire_net + '</p>');
+
+
+})
+
+
+</script>
+	
+</body>
+</html>

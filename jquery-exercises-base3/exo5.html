@@ -1,0 +1,78 @@
+Construisez une page html avec un carré et un champ de saisie de texte dans un formulaire.
+Lorsque l'on appuie sur une touche de direction le carré se déplace de 10 px dans la bonne direction.  
+BONUS : Quand le bloc atteint un bord de la page, il doit réaparaître de l'autre côté.
+
+trasform / translate X ou Y 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exo 5</title>
+</head>
+<body>
+
+<form >
+	<div id="pac"></div>
+	<input type="text">
+	<div id="coor"></div>	
+</form>
+
+<script type="text/javascript" src='jquery.js' ></script>
+<script>
+	$('#pac').css({'width':'100px','height':'100px','border':'1px solid black','position':'relative'})
+var body_width = $('body').width();
+var body_height = $('body').height();
+
+$('#pac').css('left');
+
+    	
+
+$('input').keydown(function(){
+		var which = event.which;
+		 
+		console.log(which);
+		
+		if (parseFloat($('#pac').css('left')) <= body_width ) {
+		
+				switch(which){
+				
+						case  37:    
+				        	$('#pac').animate({'left': '-=100px'}); 
+				        
+				        break;
+				    	case 38:   
+				        	$('#pac').animate({ 'top': '-=100px'});
+				           
+				        break;
+				    	
+				    	case 39: 
+				        	$('#pac').animate({'left': '+=100px'});
+				        break;
+				    	
+				    	case 40:    
+				        	$('#pac').animate({'top': '+=100px'});
+				        break;
+
+		    	}
+		}else{
+	$('#pac').css({'left': '0'});
+
+	// un animate c'est cool aussi 
+
+		}
+    	
+
+    	console.log($('#pac').css('left'));
+});
+
+
+
+	
+
+
+
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="">
+	<input type="text" placeholder="Last-name" name="nom" >
+	<p></p>
+	<input type="text" placeholder="first-name" name="prenom">
+	<p></p>
+	<input type="email" placeholder="email" name="email">
+	<p></p>
+	<input type="tel" placeholder="phone" name="tel">
+	<p></p>
+</form>
+<button>VERIFIER</button>
+<script type="text/javascript" src='jquery.js' ></script>
+<script>
+//regex 
+$('button').click(function(){
+
+	if (/^[a-z-]+$/i.test($('input[type=text][name = nom]').val())) {
+	    $('p:first-of-type').replaceWith('<p>OK</p>');
+	} else {
+	    $('p:first-of-type').replaceWith('<p> PAS OK</p>');
+	}
+
+
+	if (/^[a-z-]+$/i.test($('input[type=text][name = prenom]').val())) {
+	     $('p:nth-of-type(2)').replaceWith('<p>OK</p>');
+	} else {
+	     $('p:nth-of-type(2)').replaceWith('<p>PAS OK</p>');
+	}
+
+
+	if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test($('input[type=email][name = email]').val())) {
+	    $('p:nth-of-type(3)').replaceWith('<p>OK</p>');
+	} else {
+	    $('p:nth-of-type(3)').replaceWith('<p>PAS OK</p>');
+	}
+
+	if (/[0-9]+$/g.test($('input[type=tel][name = tel]').val())) {
+	     $('p:nth-of-type(4)').replaceWith('<p>OK</p>');
+	} else {
+	    $('p:nth-of-type(4)').replaceWith('<p>PAS OK</p>');
+
+	}
+});
+
+</script>
+</body>
+</html>

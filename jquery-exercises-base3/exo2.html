@@ -1,0 +1,25 @@
+@<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button>+</button><button>-</button>
+<p></p>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+var plus=0;
+$('button:first-of-type').click(function(){
+	plus=plus+1
+	$('p').replaceWith('<p>'+plus+'</p>')
+});
+$('button:last-of-type').click(function(){
+	plus=plus - 1
+	$('p').replaceWith('<p>'+plus+'</p>')
+});
+	
+</script>
+</body>
+</html>

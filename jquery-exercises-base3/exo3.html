@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<input type="textarea" name="textarea" id="text">
+<button>CLICK</button>
+<p></p>
+<p></p>
+
+	
+<script type="text/javascript" src="jquery.js"></script>
+	<script>
+	var good =17;
+	var plus=0;
+	
+	$('button').click(function(){
+				plus=plus+1;
+		if ($('input').val() > good){
+			$('p:first-of-type').replaceWith('<p>Less</p>');
+
+		}
+		
+		else if($('input').val() < good){
+			$('p:first-of-type').replaceWith('<p>More</p>');
+		
+		}else if($('input').val() == good){
+			
+
+			$('p:first-of-type').replaceWith('<p>Correct</p>');
+			
+			$('p:last-of-type').replaceWith('<p>You have tried :'+plus+' times.</p>');
+		}
+	});
+
+
+	
+
+		
+
+</script>
+</body>
+</html>

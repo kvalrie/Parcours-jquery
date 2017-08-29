@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery exo 3</title>
+</head>
+<body>
+
+<button>CLICK</button>
+<p></p>
+
+
+	
+	
+	
+	<script type="text/javascript" src="jquery.js"></script>
+	<script>
+	var plus = 0;
+	
+	console.log(plus);
+	
+	$('button').click(function(){
+		plus=plus+1;
+		console.log(plus);
+
+		$('p').replaceWith('<p>'+plus+'</p>');
+		
+		//pas append car sinon on a tout les chiffres
+
+	});
+
+ 
+	
+
+
+
+		
+
+</script>
+</body>
+</html>
